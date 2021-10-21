@@ -38,7 +38,7 @@ class Getfile():
                 run = Deploy_Data(file_deploy)
                 run.deploy_log(file_deploy)
                 oj_files.pop(first_key)
-                print(oj_files)
+                print("oj_files", oj_files)
                 shutil.move(folder_path + "/" + first_key, folder_path + "/file_used/")
 
 
@@ -48,7 +48,7 @@ if __name__ == '__main__':
     today = date.today()
     # YY/mm/dd
     name_folder = today.strftime("%Y-%m-%d")
-    print(name_folder)
+    print("name_folder",name_folder)
     folder_path = PATH + name_folder
 
     folder_use_path = folder_path + "/file_used/"

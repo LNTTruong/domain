@@ -45,7 +45,7 @@ class Deploy_Data():
                     "average_cls": 0,
                     "average_ttfb": 0}
                 }
-                print("oj_data", oj_data)
+                # print("oj_data", oj_data)
                 if hr not in sums:
                     sums.update(oj_data)
                 else:
@@ -85,14 +85,17 @@ class Deploy_Data():
         # while True:
 
 
-        while len(sums):
-            print(sums)
-            first_key = list(sums.items())[0][0]
-            print(first_key)
-            average_lcp = sums[first_key].get("average_lcp")
-            average_fcp= sums[first_key].get("average_fcp")
-            average_cls= sums[first_key].get("average_cls")
-            average_ttfb= sums[first_key].get("average_ttfb")
+        for i in sums:
+
+        # if len(sums) > 0:
+        #     while len(sums):
+#     print(sums)
+#             first_key = list(sums.items())[0][0]
+            print("first_key", i)
+            average_lcp = sums[i].get("average_lcp")
+            average_fcp = sums[i].get("average_fcp")
+            average_cls = sums[i].get("average_cls")
+            average_ttfb = sums[i].get("average_ttfb")
             # for key_lcp in sums:
             #     print("first_key", key_lcp)
             #     average_lcp = sums[key_lcp]['average_lcp']
@@ -112,14 +115,21 @@ class Deploy_Data():
             #     prometheus = Prometheus()
             #     prometheus.get_promethus(key_ttfb, "average_ttfb", average_ttfb)
         #
+
+            keys = urlparse(i).netloc.split('.')
+            sensor_data = keys[0] + keys[1]
+            print("sensor_data", sensor_data)
             prometheus = Prometheus()
-            prometheus.get_promethus(first_key, "average_lcp", average_lcp)
-            prometheus.get_promethus(first_key, "average_fcp", average_fcp)
-            prometheus.get_promethus(first_key, "average_cls", average_cls)
-            prometheus.get_promethus(first_key, "average_ttfb", average_ttfb)
-            sums.pop(first_key)
+            prometheus.get_promethus( i, "average_lcp", average_lcp)
+            prometheus.get_promethus( i, "average_fcp", average_fcp)
+            prometheus.get_promethus( i, "average_cls", average_cls)
+            prometheus.get_promethus( i, "average_ttfb", average_ttfb)
+            # sums.pop(i)
             print("5555555555555555", sums)
-        print(sums)
+
+
+
+                # print("sum_con_lai",sums)
 
 
         #     oj_value = {
