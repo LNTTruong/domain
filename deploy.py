@@ -1,6 +1,7 @@
 import json
 from urllib.parse import urlparse
 from main import Prometheus
+import shutil
 
 
 
@@ -76,22 +77,50 @@ class Deploy_Data():
                     sums[hr]["average_ttfb"] += oj_data[hr]["average_ttfb"]
         # LIST_DATA_PROMETHEUS = []
 
-        average_lcp=  sums[hr].get("average_lcp")
-        average_fcp= sums[hr].get("average_fcp")
-        average_cls= sums[hr].get("average_cls")
-        average_ttfb= sums[hr].get("average_ttfb")
-        prometheus = Prometheus()
+        # average_lcp=  sums[hr].get("average_lcp")
+        # average_fcp= sums[hr].get("average_fcp")
+        # average_cls= sums[hr].get("average_cls")
+        # average_ttfb= sums[hr].get("average_ttfb")
+        # prometheus = Prometheus()
         # while True:
 
 
-        for i in sums:
-            prometheus.get_promethus(sums[i], "average_lcp", average_lcp)
+        while len(sums):
+            print(sums)
+            first_key = list(sums.items())[0][0]
+            print(first_key)
+            average_lcp = sums[first_key].get("average_lcp")
+            average_fcp= sums[first_key].get("average_fcp")
+            average_cls= sums[first_key].get("average_cls")
+            average_ttfb= sums[first_key].get("average_ttfb")
+            # for key_lcp in sums:
+            #     print("first_key", key_lcp)
+            #     average_lcp = sums[key_lcp]['average_lcp']
+            #     prometheus = Prometheus()
+            #     prometheus.get_promethus(key_lcp, "average_lcp", average_lcp)
+            #     # sums.pop(key_lcp)
+            # for key_fcp in sums:
+            #     average_fcp = sums[key_fcp]['average_fcp']
+            #     prometheus = Prometheus()
+            #     prometheus.get_promethus(key_fcp, "average_fcp", average_fcp)
+            # for key_cls in sums:
+            #     average_cls = sums[key_cls]['average_cls']
+            #     prometheus = Prometheus()
+            #     prometheus.get_promethus(key_cls, "average_cls", average_cls)
+            # for key_ttfb in sums:
+            #     average_ttfb = sums[key_ttfb]['average_ttfb']
+            #     prometheus = Prometheus()
+            #     prometheus.get_promethus(key_ttfb, "average_ttfb", average_ttfb)
+        #
+            prometheus = Prometheus()
+            prometheus.get_promethus(first_key, "average_lcp", average_lcp)
+            prometheus.get_promethus(first_key, "average_fcp", average_fcp)
+            prometheus.get_promethus(first_key, "average_cls", average_cls)
+            prometheus.get_promethus(first_key, "average_ttfb", average_ttfb)
+            sums.pop(first_key)
+            print("5555555555555555", sums)
+        print(sums)
 
-            prometheus.get_promethus(sums[i], "average_fcp", average_fcp)
-
-            prometheus.get_promethus(sums[i], "average_cls", average_cls)
-
-            prometheus.get_promethus(sums[i], "average_ttfb", average_ttfb)
 
         #     oj_value = {
         #         "domain": i,

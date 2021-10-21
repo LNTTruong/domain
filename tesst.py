@@ -17,9 +17,9 @@ folder = os.listdir(path_folder)
             else:
 
 # {'https://m.afamily.vn': {'lcp': 329334.75600000034, 'fcp': 258690.20000060793, 'cls': 42.69434732569639, 'ttfb': 235444, 'sum_ss_lcp': 461, 'sum_ss_fcp': 808, 'sum_ss_cls': 811, 'sum_ss_ttfb': 815}, 'https://m.autopro.com.vn': {'lcp': 46008.393000000004, 'fcp': 38984.00000014901, 'cls': 1.9148085415549947, 'ttfb': 20441, 'sum_ss_lcp': 463, 'sum_ss_fcp': 810, 'sum_ss_cls': 813, 'sum_ss_ttfb': 817}, 'https://afamily.vn': {'lcp': 92027.10400000002, 'fcp': 72731.45499015955, 'cls': 6.619395013772748, 'ttfb': 42753, 'sum_ss_lcp': 459, 'sum_ss_fcp': 806, 'sum_ss_cls': 809, 'sum_ss_ttfb': 813}, 'https://autopro.com.vn': {'lcp': 2827.596000000001, 'fcp': 2386.799999907613, 'cls': 0.4420983460374966, 'ttfb': 552, 'sum_ss_lcp': 206, 'sum_ss_fcp': 352, 'sum_ss_cls': 358, 'sum_ss_ttfb': 359}, 'http://bu244.9s63k.xyz': {'lcp': 0, 'fcp': 300, 'cls': 0, 'ttfb': 18, 'sum_ss_lcp': 434, 'sum_ss_fcp': 767, 'sum_ss_cls': 770, 'sum_ss_ttfb': 774}}
-# filename =====  D:/data/data/2021-10-18/kh-1632503631630.dat
+# filename =====  D:/data/data/2021-10-21/kh-1632503631630.dat
 # {'https://m.afamily.vn': {'lcp': 366947.39499999955, 'fcp': 324649.00000123907, 'cls': 34.99227087764009, 'ttfb': 204787, 'sum_ss_lcp': 391, 'sum_ss_fcp': 744, 'sum_ss_cls': 718, 'sum_ss_ttfb': 746}, 'https://afamily.vn': {'lcp': 118854.70499999993, 'fcp': 31358.629999539815, 'cls': 0.5164435498673863, 'ttfb': 8655, 'sum_ss_lcp': 385, 'sum_ss_fcp': 731, 'sum_ss_cls': 705, 'sum_ss_ttfb': 733}, 'https://m.autopro.com.vn': {'lcp': 47293.78400000002, 'fcp': 35135.00000102818, 'cls': 2.251265713945672, 'ttfb': 23736, 'sum_ss_lcp': 386, 'sum_ss_fcp': 735, 'sum_ss_cls': 709, 'sum_ss_ttfb': 737}, 'https://autopro.com.vn': {'lcp': 13715.294999999998, 'fcp': 11703.099999904633, 'cls': 1.3707512312753913, 'ttfb': 3122, 'sum_ss_lcp': 351, 'sum_ss_fcp': 656, 'sum_ss_cls': 630, 'sum_ss_ttfb': 658}}
-# filename =====  D:/data/data/2021-10-18/kh-1632503636848.dat
+# filename =====  D:/data/data/2021-10-21/kh-1632503636848.dat
 # {'https://m.afamily.vn': {'lcp': 352596.1750000001, 'fcp': 304038.69999923836, 'cls': 22.973930747052478, 'ttfb': 181459, 'sum_ss_lcp': 376, 'sum_ss_fcp': 706, 'sum_ss_cls': 710, 'sum_ss_ttfb': 719}, 'https://m.autopro.com.vn': {'lcp': 33362.986, 'fcp': 27022.300000458956, 'cls': 1.1332859461558502, 'ttfb': 26876, 'sum_ss_lcp': 365, 'sum_ss_fcp': 674, 'sum_ss_cls': 678, 'sum_ss_ttfb': 687}, 'https://afamily.vn': {'lcp': 45015.81799999999, 'fcp': 30321.36000380898, 'cls': 0.6744165828363928, 'ttfb': 17066, 'sum_ss_lcp': 372, 'sum_ss_fcp': 699, 'sum_ss_cls': 703, 'sum_ss_ttfb': 712}, 'https://autopro.com.vn': {'lcp': 1465, 'fcp': 1260.3999999463558, 'cls': 0.15804433968431864, 'ttfb': 1491, 'sum_ss_lcp': 291, 'sum_ss_fcp': 536, 'sum_ss_cls': 540, 'sum_ss_ttfb': 549}}
 # if oj_data[hr]["lcp"] != 0:
 #     sum_ss_lcp += 1
@@ -155,7 +155,7 @@ folder = os.listdir(path_folder)
 #         return lcp, fcp, cls, ttfb
 #
 #
-# PATH = "D:/data/data/2021-10-18"
+# PATH = "D:/data/data/2021-10-21"
 # while True:
 #     deploydata = Deploy_Data(PATH)
 #     deploydata.deploy_log(PATH)

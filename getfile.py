@@ -3,6 +3,8 @@ import os
 import shutil
 from deploy import Deploy_Data
 import time
+from datetime import date
+
 
 oj_used = {}
 class Getfile():
@@ -30,19 +32,32 @@ class Getfile():
         if len(oj_files) > 0:
             # path_file = oj_files[file]["pathfile"]
             while len(oj_files):
+                print("oj_files", oj_files)
                 first_key = list(oj_files.items())[0][0]
                 file_deploy = oj_files[first_key]['pathfile']
                 run = Deploy_Data(file_deploy)
                 run.deploy_log(file_deploy)
                 oj_files.pop(first_key)
-                shutil.move(folder_path + "/" + first_key, folder_path + "/file/")
+                print(oj_files)
+                shutil.move(folder_path + "/" + first_key, folder_path + "/file_used/")
 
 
-PATH = "D:/workspace/domain/2021-10-18"
-while True:
-    deploydata = Getfile(PATH)
-    deploydata.deploy_file(PATH)
-    time.sleep(3)
+if __name__ == '__main__':
+
+    PATH = "D:/workspace/domain/"
+    today = date.today()
+    # YY/mm/dd
+    name_folder = today.strftime("%Y-%m-%d")
+    print(name_folder)
+    folder_path = PATH + name_folder
+
+    folder_use_path = folder_path + "/file_used/"
+    if not os.path.isdir(folder_use_path):
+        os.mkdir(folder_use_path)
+    while True:
+        deploydata = Getfile(folder_path)
+        deploydata.deploy_file(folder_path)
+        time.sleep(3)
 
 
 
